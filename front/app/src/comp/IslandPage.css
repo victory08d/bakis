@@ -1,0 +1,36 @@
+/* IslandPage.css */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .exercise-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ccc; /* Muted color */
+    animation: pulse 2s infinite;
+  }
+  
+  .exercise-button:hover {
+    background-color: #bbb; /* Slightly darker on hover */
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }
+
+  /* IslandPage.css */
+.visited {
+    background-color: #00FF00; /* Bright green */
+  }
+  

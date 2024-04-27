@@ -1,0 +1,33 @@
+/* In src/App.css or src/components/Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background: #333; /* Dark background for the header */
+    color: white;
+  }
+
+.header button {
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 50%; /* Makes buttons round */
+    cursor: pointer;
+}
+
+.header button:hover {
+    background-color: #0056b3;
+}
+
+.round-button {
+    width: 40px; /* Fixed width for round buttons */
+    height: 40px; /* Fixed height for round buttons */
+    line-height: 40px; /* Centers the text vertically */
+    text-align: center;
+}
+
+/* Optional: customize specific buttons if needed */
