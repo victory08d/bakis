@@ -6,7 +6,7 @@ const Question = (number, completed) => {
 
 function generateQuestionJson(question_count) {
   let list = [];
-  for (let i = 1; i < question_count; i++) {
+  for (let i = 1; i <= question_count; i++) {
     list.push(Question(i, false));
   }
   return list;

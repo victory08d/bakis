@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./IslandPage.css"; // Ensure this CSS file is correctly linked
+import "./IslandPage.css";
 import axios from "axios";
 
 function Island1() {
-  const [visited, setVisited] = useState([]);
-
+  const [questionMap, setQuestionMap] = useState([]);
   useEffect(() => {
     var userId = localStorage.getItem("user_id");
 
@@ -28,9 +27,11 @@ function Island1() {
             .catch(function (error) {
               alert();
             });
+        } else {
+          const jsonArrayParsed = JSON.parse(response.data.question);
+          setQuestionMap(jsonArrayParsed);
         }
 
-        //logika paverst į objekta kuri galesim veliau applyint ar exercice done or not
       });
 
     // // Load visited state from local storage
@@ -43,15 +44,12 @@ function Island1() {
     <div>
       <h1>1 Skyrius</h1>
       <div className="button-container">
-        {Array.from({ length: 30 }, (_, i) => (
-          <Link key={i} to={`/exercise/${i + 1}`}>
+        {questionMap.map((q) => (
+          <Link key={q.number} to={`/exercise/${q.number}`}>
             <button
-              className={`exercise-button ${
-                visited.includes(i + 1) ? "visited" : ""
-              }`}
-              onClick={() => handleVisit(i + 1)}
+              className={`exercise-button ${q.completed ? "visited" : ""}`}
             >
-              Exercise {i + 1}
+              Exercise {q.number}
             </button>
           </Link>
         ))}
@@ -59,11 +57,7 @@ function Island1() {
     </div>
   );
 
-  function handleVisit(id) {
-    const updatedVisited = Array.from(new Set([...visited, id])); // Add new id to the set
-    localStorage.setItem("visitedExercises", JSON.stringify(updatedVisited));
-    setVisited(updatedVisited);
-  }
+
 }
 
 export default Island1;
