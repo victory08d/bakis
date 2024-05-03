@@ -3,12 +3,15 @@
 }
 
 body {
-  font-family: 'Comic Neue', cursive; /* A playful font family */
-  background: linear-gradient(45deg, #85C1E9, #F7DC6F); /* Bright and engaging background gradient */
+  font-family: 'Comic Neue', Verdana, Geneva, Tahoma, sans-serif;
+  /* A playful font family */
+  background: linear-gradient(45deg, #85C1E9, #F7DC6F);
+  /* Bright and engaging background gradient */
   color: #333;
   text-align: center;
   padding: 20px;
-  min-height: 100vh; /* Full height */
+  min-height: 100vh;
+  /* Full height */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,52 +19,98 @@ body {
 }
 
 button {
-  background-color: #FF5733; /* Bright orange */
+  background-color: #FF5733;
+  /* Bright orange */
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px; /* Larger font size for readability */
+  font-size: 20px;
+  /* Larger font size for readability */
   margin: 4px 2px;
-  transition: background-color 0.3s, transform 0.3s, rotate 0.2s; /* Added rotate transition */
+  transition: background-color 0.3s, transform 0.3s, rotate 0.2s;
+  /* Added rotate transition */
   cursor: pointer;
-  border-radius: 15px; /* More rounded corners */
+  border-radius: 15px;
+  /* More rounded corners */
   outline: none;
 }
 
 button:hover {
-  background-color: #FFC300; /* Brighter yellow */
-  transform: scale(1.1) rotate(-10deg); /* Scale and playful rotation */
+  background-color: #FFC300;
+  /* Brighter yellow */
+  transform: scale(1.1) rotate(-10deg);
+  /* Scale and playful rotation */
 }
 
+
 input[type="text"] {
-  padding: 15px; /* More padding for bigger touch targets */
-  margin: 10px auto; /* Auto margin for center alignment */
-  border-radius: 15px; /* Rounded corners */
-  border: 2px dashed #FFC300; /* Dashed, colorful border */
+  padding: 15px;
+  /* More padding for bigger touch targets */
+  margin: 10px auto;
+  /* Auto margin for center alignment */
+  border-radius: 15px;
+  /* Rounded corners */
+  border: 2px dashed #FFC300;
+  /* Dashed, colorful border */
   display: block;
-  width: 80%; /* Adjusted width for better layout */
-  font-size: 18px; /* Larger font size */
-  color: #6C3483; /* Fun text color */
+  width: 80%;
+  /* Adjusted width for better layout */
+  font-size: 18px;
+  /* Larger font size */
+  color: #6C3483;
+  /* Fun text color */
 }
 
 input[type="password"] {
-  padding: 15px; /* More padding for bigger touch targets */
-  margin: 10px auto; /* Auto margin for center alignment */
-  border-radius: 15px; /* Rounded corners */
-  border: 2px dashed #FFC300; /* Dashed, colorful border */
+  padding: 15px;
+  /* More padding for bigger touch targets */
+  margin: 10px auto;
+  /* Auto margin for center alignment */
+  border-radius: 15px;
+  /* Rounded corners */
+  border: 2px dashed #FFC300;
+  /* Dashed, colorful border */
   display: block;
-  width: 80%; /* Adjusted width for better layout */
-  font-size: 18px; /* Larger font size */
-  color: #6C3483; /* Fun text color */
+  width: 80%;
+  /* Adjusted width for better layout */
+  font-size: 18px;
+  /* Larger font size */
+  color: #6C3483;
+  /* Fun text color */
 }
 
 h1 {
-  color: #28B463; /* Bright green */
-  font-size: 48px; /* Larger size for heading */
-  text-shadow: 4px 4px 0px #F9E79F; /* Shadow effect for depth */
+  color: #28B463;
+  /* Bright green */
+  font-size: 48px;
+  /* Larger size for heading */
+  text-shadow: 2px 2px 0px #F9E79F;
+  /* Shadow effect for depth */
 }
 
+h2 {
+  color: #28B463;
+  /* Bright green */
+  font-size: 36px;
+  /* Larger size for heading */
+  text-shadow: 4px 4px 0px #F9E79F;
+  /* Shadow effect for depth */
+}
 
+.content {
+  display: flex;
+  /* Enables Flexbox layout */
+  align-items: center;
+  /* Vertically centers the items in the container */
+  justify-content: flex-start;
+  /* Aligns items to the start of the flex-direction, keeping items left-aligned */
+}
+
+.content img {
+  margin-right: 10px;
+  /* Adds some space between the image and the text */
+  width: 250px;
+}

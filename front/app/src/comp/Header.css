@@ -1,33 +1,70 @@
-/* In src/App.css or src/components/Header.css */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 20px;
-    background: #333; /* Dark background for the header */
+    padding: 20px 20px;
+    background: linear-gradient(45deg, #446276, #807139);
+    /* Dark background with fun icons or patterns can be added */
     color: white;
-  }
+    position: fixed;
+    /* Makes the header stay at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* Ensures the header is above other content */
+}
 
-.header button {
-    padding: 8px 16px;
-    margin-right: 5px;
-    border: none;
-    background-color: #007BFF;
+.button-group button {
+    background-color: #2ECC71;
+    /* Fun bright blue */
     color: white;
-    border-radius: 50%; /* Makes buttons round */
+    border-radius: 50%;
+    /* Keeps buttons round */
+    width: 80px;
+    height: 80px;
+    padding: 5px 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 8px;
+    /* Adjust spacing between buttons */
     cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.header button:hover {
-    background-color: #0056b3;
+.button-group button:hover {
+    transform: scale(1.3);
+    /* Fun scaling effect on hover */
+    background-color: #186A3B;
+    /* Darker blue on hover */
 }
 
-.round-button {
-    width: 40px; /* Fixed width for round buttons */
-    height: 40px; /* Fixed height for round buttons */
-    line-height: 40px; /* Centers the text vertically */
+#back-button,
+#badge-button {
+    background-color: #FF5733;
+    /* Bright orange */
+    border: none;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    /* Larger font size for readability */
+    margin: 4px 2px;
+    transition: background-color 0.3s, transform 0.3s, rotate 0.2s;
+    /* Added rotate transition */
+    cursor: pointer;
+    border-radius: 15px;
+    /* More rounded corners */
+    outline: none;
 }
 
-/* Optional: customize specific buttons if needed */
+#back-button:hover,
+#badge-button:hover {
+    background-color: #FFC300;
+    /* Yellow on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}

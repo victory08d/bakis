@@ -6,15 +6,17 @@ import SignUp from './comp/SignUp';
 import Welcome from './comp/Welcome';
 import MathQuestion from './comp/MathQuestion';
 import './App.css';
+import './comp/Header.css';
 //import Header from './comp/Header';
-import IslandPage1 from './comp/Island1';  
-import IslandPage2 from './comp/Island2';  
-import IslandPage3 from './comp/Island3';  
-import IslandPage4 from './comp/Island4';  
-import IslandPage5 from './comp/Island5';  
+import IslandPage1 from './comp/Island1';
+import IslandPage2 from './comp/Island2';
+import IslandPage3 from './comp/Island3';
+import IslandPage4 from './comp/Island4';
+import IslandPage5 from './comp/Island5';
 import ExercisePage from './comp/ExercisePage';
-import BadgesPage from './comp/Badges'; 
-import HeaderWrapper from './comp/HeaderWrapper'; 
+import Badges from './comp/Badges';
+import HeaderWrapper from './comp/HeaderWrapper';
+
 
 function App() {
     const [hasBadge, setHasBadge] = useState(false);
@@ -29,7 +31,7 @@ function App() {
                     {/*<Route path="/signin" element={<SignIn />} />*/}
                     <Route path="/welcome" element={<Welcome hasBadge={hasBadge} />} />
                     <Route path="/math-question" element={<MathQuestion setHasBadge={setHasBadge} />} />
-                    <Route path="/BadgesPage" element={<BadgesPage />} />
+                    <Route path="/badges" element={<Badges />} />
                     <Route path="/island1" element={<IslandPage1 />} />
                     <Route path="/exercise/:id" component={ExercisePage} />
                     <Route path="/island2" element={<IslandPage2 />} />
@@ -37,6 +39,7 @@ function App() {
                     <Route path="/island4" element={<IslandPage4 />} />
                     <Route path="/island5" element={<IslandPage5 />} />
                 </Routes>
+
             </div>
         </Router>
     );
