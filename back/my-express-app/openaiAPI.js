@@ -4,7 +4,7 @@ const openai = require('openai');
 /*async function getQuestionFromPrompt(prompt) {
     console.log(prompt)
     const openai = new OpenAI({
-        apiKey: 'sk-proj-9P435DgEkO7W5cjubT1IT3BlbkFJb7BYAOpuOlgcGDoIvIjd', // This is the default and can be omitted
+        apiKey: ' // This is the default and can be omitted
     });
 
     return await openai.chat.completions.create({
