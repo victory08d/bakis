@@ -4,7 +4,7 @@ import "./IslandPage.css";
 import axios from "axios";
 
 function Island1() {
-  const [questionMap, setQuestionMap] = useState([]);
+  const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
   useEffect(() => {
     var userId = localStorage.getItem("user_id");
 
@@ -34,10 +34,6 @@ function Island1() {
 
       });
 
-    // // Load visited state from local storage
-    // const visitedExercises =
-    //   JSON.parse(localStorage.getItem("visitedExercises")) || [];
-    // setVisited(visitedExercises);
   }, []);
 
   return (
@@ -45,7 +41,7 @@ function Island1() {
       <h1>1 Skyrius</h1>
       <div className="button-container">
         {questionMap.map((q) => (
-          <Link key={q.number} to={`/exercise/${q.number}`}>
+          <Link key={q.number} to={`/exercise/1/${q.number}`}>
             <button
               className={`exercise-button ${q.completed ? "visited" : ""}`}
             >
@@ -57,7 +53,19 @@ function Island1() {
     </div>
   );
 
-
 }
+
+
+const Question = (number, completed) => {
+    return { number: number, completed: completed };
+  };
+   
+  function generateQuestionJson(question_count) {
+    let list = [];
+    for (let i = 1; i <= question_count; i++) {
+      list.push(Question(i, false));
+    }
+    return list;
+   }
 
 export default Island1;

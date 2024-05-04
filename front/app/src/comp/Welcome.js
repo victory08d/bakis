@@ -13,6 +13,9 @@ function Welcome() {
 
             <button id="button2" onClick={() => navigate('/math-question')}>1 Klausimas</button>
             <button id="button2" onClick={() => navigate('/badges')}>Surinkti ženkleliai</button>
+            <div>
+            <button id="button2" onClick={() => navigate('/about')}>Apie mus</button>
+            </div>
         </div>
     );
 }

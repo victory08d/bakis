@@ -54,6 +54,16 @@ app.get("/questions", (req, res) => {
   });
 });
 
+app.put("/progress", (req, res) => {
+    const { userId, chapter, number } = req.body;
+    progressRepository.updateProgress(chapter, number, userId, (err) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      res.status(200);
+    });
+  });
+
 app.listen(8080, () => {
   console.log("Server is running on http://localhost:8080");
 });
