@@ -51,8 +51,35 @@ function updateProgress(chapter, number, userId) {
   });
 }
 
+function getProgressPoints(user_id, callback) {
+  const sql = "SELECT QUESTION FROM progress WHERE USER_ID = ?";
+  db.all(sql, [user_id], function (err, row) {
+    if (err) {
+      return callback(err);
+    }
+    callback(null, { points: calculatePoints(row) });
+  });
+}
+
+function calculatePoints(row) {
+  const rowArray = Array.from(row);
+  var points = 0;
+  if (rowArray !== undefined) {
+    for (var i = 0; i < rowArray.length; i++) {
+      const questions = JSON.parse(rowArray[i].question);
+      for (var j = 0; j < questions.length; j++) {
+        if (questions[j].completed) {
+          points++;
+        }
+      }
+    }
+  }
+  return points;
+}
+
 module.exports = {
   createProgress,
   getProgress,
   updateProgress,
+  getProgressPoints,
 };
