@@ -51,12 +51,41 @@ app.get("/progress", (req, res) => {
 
 app.get("/points", (req, res) => {
   const { userId } = req.query;
-  console.log(userId);
   progressRepository.getProgressPoints(userId, (err, points) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     }
     res.status(200).json(points);
+  });
+});
+
+app.get("/badge", (req, res) => {
+  const { userId } = req.query;
+  progressRepository.hasBadge(userId, (err, badges) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.status(200).json(badges);
+  });
+});
+
+app.get("/points", (req, res) => {
+  const { userId } = req.query;
+  progressRepository.getProgressPoints(userId, (err, points) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.status(200).json(points);
+  });
+});
+
+app.get("/badge", (req, res) => {
+  const { userId } = req.query;
+  progressRepository.hasBadge(userId, (err, badges) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.status(200).json(badges);
   });
 });
 
