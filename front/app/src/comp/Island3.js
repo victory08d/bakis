@@ -41,7 +41,7 @@ function Island3() {
       <h1>3 Skyrius</h1>
       <div className="button-container">
         {questionMap.map((q) => (
-          <Link key={q.number} to={`/exercise/1/${q.number}`}>
+          <Link key={q.number} to={`/exercise/3/${q.number}`}>
             <button
               className={`exercise-button ${q.completed ? "visited" : ""}`}
             >
