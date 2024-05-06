@@ -45,13 +45,12 @@ function ExercisePage() {
   };
   return (
     <div>
-      <h1>Exercise {number}</h1>
+      <h1>Užduotis numeris {number}</h1>
       <div>
         {question}
         <div>
           <form onSubmit={handleSubmit} className="signup-form">
             <label>
-              Atsakymas:
               <input
                 type="text"
                 value={guess}

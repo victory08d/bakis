@@ -29,7 +29,7 @@ button {
   display: inline-block;
   font-size: 20px;
   /* Larger font size for readability */
-  margin: 4px 2px;
+  margin: 4px 10px;
   transition: background-color 0.3s, transform 0.3s, rotate 0.2s;
   /* Added rotate transition */
   cursor: pointer;

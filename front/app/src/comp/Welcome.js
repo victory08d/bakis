@@ -10,11 +10,9 @@ function Welcome() {
                 <img src={logo} alt="Welcome Logo" />
                 <h1>Sveikas! Pradėkime kelionę!</h1>
             </div>
-
-            <button id="button2" onClick={() => navigate('/math-question')}>1 Klausimas</button>
-            <button id="button2" onClick={() => navigate('/badges')}>Surinkti ženkleliai</button>
+            <button id="button" onClick={() => navigate('/badges')}>Surinkti ženkleliai</button>
             <div>
-            <button id="button2" onClick={() => navigate('/about')}>Apie mus</button>
+            <button id="button" onClick={() => navigate('/about')}>Apie mus</button>
             </div>
         </div>
     );

@@ -45,7 +45,7 @@ function Island1() {
             <button
               className={`exercise-button ${q.completed ? "visited" : ""}`}
             >
-              Exercise {q.number}
+               {q.number} užduotis
             </button>
           </Link>
         ))}

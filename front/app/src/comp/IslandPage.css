@@ -9,12 +9,12 @@
   .exercise-button {
     padding: 10px 20px;
     border: none;
-    background-color: #ccc; /* Muted color */
+    background-color: #FFC300; /* Muted color */
     animation: pulse 2s infinite;
   }
   
   .exercise-button:hover {
-    background-color: #bbb; /* Slightly darker on hover */
+    background-color: #d8a600; /* Slightly darker on hover */
   }
   
   @keyframes pulse {
@@ -31,6 +31,10 @@
 
   /* IslandPage.css */
 .visited {
-    background-color: #00FF00; /* Bright green */
+    background-color: #035f03; /* Bright green */
+  }
+
+  .visited:hover {
+    background-color: #024202; /* Bright green */
   }
   

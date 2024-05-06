@@ -4,7 +4,6 @@ import Home from './comp/Home';
 import SignUp from './comp/SignUp';
 //import SignIn from './comp/SignIn';
 import Welcome from './comp/Welcome';
-//import MathQuestion from './comp/MathQuestion';
 import './App.css';
 import './comp/Header.css';
 //import Header from './comp/Header';
@@ -31,7 +30,6 @@ function App() {
                     <Route path="/signup" element={<SignUp />} />
                     {/*<Route path="/signin" element={<SignIn />} />*/}
                     <Route path="/welcome" element={<Welcome hasBadge={hasBadge} />} />
-                    {/*<Route path="/math-question" element={<MathQuestion setHasBadge={setHasBadge} />} />*/}
                     <Route path="/badges" element={<Badges />} />
                     <Route path="/island1" element={<IslandPage1 />} />
                     <Route path="/exercise/:chapter/:id" element={<ExercisePage />} />

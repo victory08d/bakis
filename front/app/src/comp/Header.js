@@ -20,6 +20,7 @@ function Header() {
             </div>
             <span style={{ marginLeft: '5px', marginRight: '10px', color: 'white', fontSize: '18px', alignSelf: 'center' }}>Surinkti taškai:</span>
             <button id="badge-button" onClick={() => handleNavigate('/badges')}>Ženkleliai</button> {/* Badge button with id for specific styling */}
+            <button id="out-button" onClick={() => handleNavigate('/')}>Atsijungti</button>
         </div>
     );
 
