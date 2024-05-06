@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import RandomImage from './RandomImage';
 
 function ExercisePage() {
   let { chapter, id: number } = useParams(); // Gets the id from the URL
@@ -37,7 +38,7 @@ function ExercisePage() {
       setGuess("");
       axios
         .get("http://localhost:8080/questions", { params: { id: 1 } })
-        .then(function (response) {
+        .then(function (response) {ė
           setQuestion(response.data.question);
           setAnswer(response.data.answer);
         });
@@ -47,7 +48,10 @@ function ExercisePage() {
     <div>
       <h1>Užduotis numeris {number}</h1>
       <div>
-        {question}
+        <div className="content">
+          <RandomImage/>
+          {question}
+        </div>
         <div>
           <form onSubmit={handleSubmit} className="signup-form">
             <label>
