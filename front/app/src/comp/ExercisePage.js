@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import RandomImage from './RandomImage';
+import RandomImage from "./RandomImage";
 
 function ExercisePage() {
   let { chapter, id: number } = useParams(); // Gets the id from the URL
@@ -37,8 +37,8 @@ function ExercisePage() {
       alert("Neteisingai! Bandyk iš naujo.");
       setGuess("");
       axios
-        .get("http://localhost:8080/questions", { params: { id: 1 } })
-        .then(function (response) {ė
+        .get("http://localhost:8080/questions", { params: { id: number } })
+        .then(function (response) {
           setQuestion(response.data.question);
           setAnswer(response.data.answer);
         });
@@ -49,7 +49,7 @@ function ExercisePage() {
       <h1>Užduotis numeris {number}</h1>
       <div>
         <div className="content">
-          <RandomImage/>
+          <RandomImage />
           {question}
         </div>
         <div>
@@ -67,7 +67,7 @@ function ExercisePage() {
           {answer}
         </div>
       </div>
-     </div>
+    </div>
   );
 }
 

@@ -10,18 +10,27 @@ function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:8080/register", {
-        username: username,
-        password: password,
+      .get("http://localhost:8080/register", {
+        params: { username: username, password: password },
       })
       .then(function (response) {
-        console.log(response.data.id);
-        localStorage.setItem("user_id", JSON.stringify(response.data.id));
-        navigate("/welcome");
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert("Neteisingi duomenys, bandykite dar kartą.");
+        if (response.data.id === undefined) {
+          axios
+            .post("http://localhost:8080/register", {
+              username: username,
+              password: password,
+            })
+            .then(function (response) {
+              localStorage.setItem("user_id", JSON.stringify(response.data.id));
+              navigate("/welcome");
+            })
+            .catch(function (error) {
+              alert("Neteisingi duomenys, bandykite dar kartą.");
+            });
+        } else {
+          localStorage.setItem("user_id", JSON.stringify(response.data.id));
+          navigate("/welcome");
+        }
       });
   };
 
