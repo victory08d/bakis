@@ -29,28 +29,27 @@ function getProgress(chapter, user_id, callback) {
     if (err) {
       return callback(err);
     }
-    console.log(row);
     callback(null, row);
   });
 }
 
 function updateProgress(chapter, number, userId) {
-   const sql = "SELECT QUESTION FROM progress WHERE USER_ID = ? and CHAPTER = ?";
-    db.get(sql, [userId, chapter], function (err, row) {
-      if (err) {
-        return callback(err);
-      }
-  
-      var questions = JSON.parse(row.question);
-      var index = questions.findIndex((x) => x.number == number);
-      questions[index] = Question(number, true);
-  
-      db.run(
-        "UPDATE progress set question = ? WHERE user_id = ? and chapter = ?",
-        [JSON.stringify(questions), userId, chapter]
-      );
-    });
-  }
+  const sql = "SELECT QUESTION FROM progress WHERE USER_ID = ? and CHAPTER = ?";
+  db.get(sql, [userId, chapter], function (err, row) {
+    if (err) {
+      return callback(err);
+    }
+
+    var questions = JSON.parse(row.question);
+    var index = questions.findIndex((x) => x.number == number);
+    questions[index] = Question(number, true);
+
+    db.run(
+      "UPDATE progress set question = ? WHERE user_id = ? and chapter = ?",
+      [JSON.stringify(questions), userId, chapter]
+    );
+  });
+}
 
 module.exports = {
   createProgress,
