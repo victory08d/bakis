@@ -44,6 +44,7 @@ function Island1() {
           <Link key={q.number} to={`/exercise/1/${q.number}`}>
             <button
               className={`exercise-button ${q.completed ? "visited" : ""}`}
+              disabled={q.completed}
             >
                {q.number} užduotis
             </button>
