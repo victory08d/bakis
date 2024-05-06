@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Header() {
+function Header({ points, setPoints }) {
   const navigate = useNavigate();
   const handleNavigate = (path) => {
     navigate(path);
   };
-  const [points, setPoints] = useState("");
 
   useEffect(() => {
     axios

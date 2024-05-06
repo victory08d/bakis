@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 function ExercisePage() {
   let { chapter, id: number } = useParams(); // Gets the id from the URL
-  console.log(chapter);
-  console.log(number);
 
   const [question, setQuestion] = useState("");
   const [guess, setGuess] = useState("");
@@ -16,7 +14,9 @@ function ExercisePage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/questions", { params: { id: number } })
+      .get("http://localhost:8080/questions", {
+        params: { number: number, chapter: chapter },
+      })
       .then(function (response) {
         setQuestion(response.data.question);
         setAnswer(response.data.answer);

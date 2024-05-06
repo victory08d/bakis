@@ -60,18 +60,44 @@ app.get("/points", (req, res) => {
   });
 });
 
-app.get("/questions", (req, res) => {
-  promptsRepository.getPromptByID(req.query.id, (err, result) => {
+app.get("/points", (req, res) => {
+  const { userId } = req.query;
+  console.log(userId);
+  progressRepository.getProgressPoints(userId, (err, points) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     }
-    const resultgpt = openai.getQuestionFromPrompt(result);
-    resultgpt.then(function (response) {
-      res
-        .status(200)
-        .json(openai.parseResponse(response.data.choices[0].message.content));
-    });
+    res.status(200).json(points);
   });
+});
+
+app.get("/points", (req, res) => {
+  const { userId } = req.query;
+  console.log(userId);
+  progressRepository.getProgressPoints(userId, (err, points) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.status(200).json(points);
+  });
+});
+
+app.get("/questions", (req, res) => {
+  promptsRepository.getPromptByQuestionNumberAndChapter(
+    req.query.number,
+    req.query.chapter,
+    (err, result) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      const resultgpt = openai.getQuestionFromPrompt(result);
+      resultgpt.then(function (response) {
+        res
+          .status(200)
+          .json(openai.parseResponse(response.data.choices[0].message.content));
+      });
+    }
+  );
 });
 
 app.put("/progress", (req, res) => {
