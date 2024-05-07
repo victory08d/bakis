@@ -2,9 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
+import Modal from './Modal';
 
 function Island1({ setPoints }) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    setModalOpen(true);  // Open the modal when the page loads
+  }, []);
+
+  const handleClose = () => {
+    setModalOpen(false);  // This function should close the modal
+  }
 
   useEffect(() => {
     var userId = localStorage.getItem("user_id");
@@ -46,6 +57,12 @@ function Island1({ setPoints }) {
 
   return (
     <div>
+      <Modal isOpen={modalOpen} onClose={handleClose}>
+        <h2>1 saloje rasi:</h2>
+        <p>Skaičių skaitymą;
+        </p>
+      </Modal>
+      
       <h1>1 Skyrius</h1>
       <div className="button-container">
         {questionMap.map((q) => (

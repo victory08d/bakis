@@ -14,6 +14,7 @@ function Welcome() {
             <div>
             <button id="button" onClick={() => navigate('/about')}>Apie mus</button>
             </div>
+            
         </div>
     );
 }
