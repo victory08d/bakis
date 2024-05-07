@@ -3,10 +3,21 @@ import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
 
-function Island2() {
+function Island2({ setPoints }) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
+  
+
   useEffect(() => {
     var userId = localStorage.getItem("user_id");
+
+    axios
+      .get("http://localhost:8080/points", {
+        params: { userId: userId },
+      })
+      .then(function (response) {
+        setPoints(response.data.points);
+        console.log(response.data.points);
+      });
 
     axios
       .get("http://localhost:8080/progress", {
@@ -31,10 +42,8 @@ function Island2() {
           const jsonArrayParsed = JSON.parse(response.data.question);
           setQuestionMap(jsonArrayParsed);
         }
-
       });
-
-  }, []);
+  }, [setPoints]);
 
   return (
     <div>
@@ -44,28 +53,27 @@ function Island2() {
           <Link key={q.number} to={`/exercise/2/${q.number}`}>
             <button
               className={`exercise-button ${q.completed ? "visited" : ""}`}
+              disabled={q.completed}
             >
-               {q.number} užduotis
+              {q.number} užduotis
             </button>
           </Link>
         ))}
       </div>
     </div>
   );
-
 }
 
-
 const Question = (number, completed) => {
-    return { number: number, completed: completed };
-  };
-   
-  function generateQuestionJson(question_count) {
-    let list = [];
-    for (let i = 1; i <= question_count; i++) {
-      list.push(Question(i, false));
-    }
-    return list;
-   }
+  return { number: number, completed: completed };
+};
+
+function generateQuestionJson(question_count) {
+  let list = [];
+  for (let i = 1; i <= question_count; i++) {
+    list.push(Question(i, false));
+  }
+  return list;
+}
 
 export default Island2;

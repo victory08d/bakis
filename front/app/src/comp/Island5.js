@@ -3,10 +3,19 @@ import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
 
-function Island5() {
+function Island5([setPoints]) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
   useEffect(() => {
     var userId = localStorage.getItem("user_id");
+
+    axios
+      .get("http://localhost:8080/points", {
+        params: { userId: userId },
+      })
+      .then(function (response) {
+        setPoints(response.data.points);
+        console.log(response.data.points);
+      });
 
     axios
       .get("http://localhost:8080/progress", {
@@ -34,7 +43,7 @@ function Island5() {
 
       });
 
-  }, []);
+  }, [setPoints]);
 
   return (
     <div>
