@@ -36,10 +36,14 @@ function App() {
             element={<IslandPage1 setPoints={setPoints} />}
           />
           <Route path="/exercise/:chapter/:id" element={<ExercisePage />} />
-          <Route path="/island2" element={<IslandPage2 />} />
-          <Route path="/island3" element={<IslandPage3 />} />
-          <Route path="/island4" element={<IslandPage4 />} />
-          <Route path="/island5" element={<IslandPage5 />} />
+          <Route path="/island2"
+            element={<IslandPage2 setPoints={setPoints} />} />
+          <Route path="/island3"
+            element={<IslandPage3 setPoints={setPoints} />} />
+          <Route path="/island4"
+            element={<IslandPage4 setPoints={setPoints} />} />
+          <Route path="/island5"
+            element={<IslandPage5 setPoints={setPoints} />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>

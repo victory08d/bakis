@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// Import collected badge images
+// Import collected and uncollected badge images
 import badge1 from "./badge1.png";
 import badge2 from "./badge2.png";
 import badge3 from "./badge3.png";
 import badge4 from "./badge4.png";
 import badge5 from "./badge5.png";
-// Import uncollected badge images
 import nobadge1 from "./nobadge1.png";
 import nobadge2 from "./nobadge2.png";
 import nobadge3 from "./nobadge3.png";
@@ -16,9 +15,8 @@ import nobadge5 from "./nobadge5.png";
 function BadgesPage() {
   const [badges, setBadges] = useState([]);
 
-  // Array of collected badge images
+  // Array of collected and uncollected badge images
   const badgeImages = [badge1, badge2, badge3, badge4, badge5];
-  // Array of uncollected badge images
   const nobadgeImages = [nobadge1, nobadge2, nobadge3, nobadge4, nobadge5];
 
   useEffect(() => {
@@ -35,28 +33,21 @@ function BadgesPage() {
   return (
     <div>
       <h1>Surinkti ženkleliai:</h1>
-      <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap' }}>
         {badges.map((b, index) => (
-          <div key={index}>
+          <div key={index} className="badge-container" style={{ display: 'inline-block', width: '200px', height: '250px' }}>
             <p> Skyrius {b.chapter} </p>
-            {b.received ? (
-              <img
-                src={badgeImages[index % badgeImages.length]} // Use modulo to cycle through images if more badges than images
-                alt={`Collected Badge ${index + 1}`}
-                className="badge-icon"
-                width={200}
-              />
-            ) : (
-              <>
-                
-                <img
-                  src={nobadgeImages[index % nobadgeImages.length]} // Use modulo similarly for no badge images
-                  alt={`Uncollected Badge ${index + 1}`}
-                  className="badge-icon"
-                  width={100} // Smaller image for uncollected badges
-                />
-              </>
-            )}
+            <img
+              src={b.received ? badgeImages[index % badgeImages.length] : nobadgeImages[index % nobadgeImages.length]}
+              alt={b.received ? `Collected Badge ${index + 1}` : `Uncollected Badge ${index + 1}`}
+              className="badge-icon"
+              style={{
+                width: b.received ? '70%' : '50%', // Adjusted for size in the same container
+                height: 'auto',
+                display: 'block',
+                margin: '0 auto' // Centers the image in the div
+              }}
+            />
           </div>
         ))}
       </div>

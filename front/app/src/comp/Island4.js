@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
 
-function Island4([setPoints]) {
+function Island4({setPoints}) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
   useEffect(() => {
     var userId = localStorage.getItem("user_id");

@@ -43,7 +43,7 @@ function Island2({ setPoints }) {
           setQuestionMap(jsonArrayParsed);
         }
       });
-  }, [setPoints]);
+  }, []);
 
   return (
     <div>
