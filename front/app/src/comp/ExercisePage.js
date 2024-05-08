@@ -37,7 +37,9 @@ function ExercisePage() {
       alert("Neteisingai! Bandyk iš naujo.");
       setGuess("");
       axios
-        .get("http://localhost:8080/questions", { params: { id: 1 } })
+        .get("http://localhost:8080/questions", {
+          params: { number: number, chapter: chapter },
+        })
         .then(function (response) {
           setQuestion(response.data.question);
           setAnswer(response.data.answer);

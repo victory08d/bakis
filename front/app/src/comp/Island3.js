@@ -43,7 +43,7 @@ function Island3({setPoints}) {
 
       });
 
-  }, []);
+  }, [setPoints]);
 
   return (
     <div>

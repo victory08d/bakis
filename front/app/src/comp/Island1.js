@@ -10,12 +10,18 @@ function Island1({ setPoints }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    setModalOpen(true);  // Open the modal when the page loads
+    // Check local storage to see if the modal has been shown
+    const showModal = localStorage.getItem('island1Visited');
+
+    if (!showModal) {
+      setModalOpen(true);
+      localStorage.setItem('island1Visited', 'true'); // Set a flag in local storage
+    }
   }, []);
 
   const handleClose = () => {
-    setModalOpen(false);  // This function should close the modal
-  }
+    setModalOpen(false);
+  };
 
   useEffect(() => {
     var userId = localStorage.getItem("user_id");
@@ -53,14 +59,13 @@ function Island1({ setPoints }) {
           setQuestionMap(jsonArrayParsed);
         }
       });
-  }, []);
+  }, [setPoints]);
 
   return (
-    <div>
+    <div className="body-container">
       <Modal isOpen={modalOpen} onClose={handleClose}>
         <h2>1 saloje rasi:</h2>
-        <p>Skaičių skaitymą;
-        </p>
+        <p>Skaičių skaitymą;</p>
       </Modal>
       
       <h1>1 Skyrius</h1>
