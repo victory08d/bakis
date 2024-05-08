@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
+import island2 from './island2.png';
 
 function Island2({ setPoints }) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
@@ -46,6 +47,8 @@ function Island2({ setPoints }) {
   }, [setPoints]);
 
   return (
+    <div>
+      <img src={island2} alt="2 island" className="island-image"/>
     <div className="button-container">
       <h1>2 SALA</h1>
       <div>
@@ -59,7 +62,17 @@ function Island2({ setPoints }) {
             </button>
           </Link>
         ))}
+        <div>
+  <h3>Šioje saloje rasi:</h3>
+  <div className="text-container-row">
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+  </div>
+</div>
       </div>
+    </div>
     </div>
   );
 }

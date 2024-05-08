@@ -2,28 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
-import Modal from './Modal';
 import island1 from './island1.png'
 //import islandback from "./island_back.jpg";
 
 function Island1({ setPoints }) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
-
-  const [modalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    // Check local storage to see if the modal has been shown
-    const showModal = localStorage.getItem('island1Visited');
-
-    if (!showModal) {
-      setModalOpen(true);
-      localStorage.setItem('island1Visited', 'true'); // Set a flag in local storage
-    }
-  }, []);
-
-  const handleClose = () => {
-    setModalOpen(false);
-  };
 
   useEffect(() => {
     var userId = localStorage.getItem("user_id");
@@ -65,10 +48,7 @@ function Island1({ setPoints }) {
 
   return (
     <div>
-      <Modal isOpen={modalOpen} onClose={handleClose}>
-        <h2>1 saloje rasi:</h2>
-        <p>Skaičių skaitymą;</p>
-      </Modal>
+      
       <img src={island1} alt="1 island" className="island-image"/>
         <div className="button-container">
        
@@ -85,8 +65,15 @@ function Island1({ setPoints }) {
           </Link>
         ))}
         <div>
-          <h3>Šioje saloje rasi uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba. </h3>
-          </div>
+  <h3>Šioje saloje rasi:</h3>
+  <div className="text-container-row">
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+  </div>
+</div>
+
         </div>
       </div>
     </div>

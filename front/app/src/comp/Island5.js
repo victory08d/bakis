@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
+import island5 from './island5.png'
 
 function Island5({setPoints}) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
@@ -46,19 +47,32 @@ function Island5({setPoints}) {
   }, [setPoints]);
 
   return (
+    <div>
+      <img src={island5} alt="5 island" className="island-image"/>
     <div className="button-container">
       <h1>5 SALA</h1>
-      <div >
+      <div>
         {questionMap.map((q) => (
           <Link key={q.number} to={`/exercise/5/${q.number}`}>
             <button
               className={`exercise-button ${q.completed ? "visited" : ""}`}
+              disabled={q.completed}
             >
-               {q.number} užduotis
+              {q.number} užduotis
             </button>
           </Link>
         ))}
+        <div>
+  <h3>Šioje saloje rasi:</h3>
+  <div className="text-container-row">
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+  </div>
+</div>
       </div>
+    </div>
     </div>
   );
 

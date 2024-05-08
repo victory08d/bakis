@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 95%;
+  width: 95%; /* Keeps the main container width */
 }
 
 .island-image {
@@ -16,42 +16,60 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
+  justify-content: center; /* Keeps items centered horizontally */
+  align-items: center; /* Aligns items vertically */
   background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
   padding: 20px;
   border-radius: 10px;
+  width: 90%; /* Adjusted width */
+  margin: auto; /* Centers the container horizontally within its parent */
 }
-  
-  .exercise-button {
-    padding: 10px 20px;
-    width: 15%;
-    border: none;
-    background-color: #FFC300; /* Muted color */
-    animation: pulse 2s infinite;
-  }
-  
-  .exercise-button:hover {
-    background-color: #d8a600; /* Slightly darker on hover */
-  }
-  
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-    }
-  }
 
-  /* IslandPage.css */
+.text-container {
+  flex: 1 1 20%; /* Allows the containers to grow and shrink but bases them on 20% of the parent width */
+  margin: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 0, 0.5); /* Yellow with 50% transparency */
+  border-radius: 10px; /* Rounded corners */
+  box-sizing: border-box; /* Includes padding and border in the width calculation */
+}
+
+.text-container-row {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping if the screen is too narrow */
+  justify-content: space-between; /* Distributes space evenly between the containers */
+  align-items: center; /* Vertically centers the items in the container */
+}
+
+
+.exercise-button {
+  padding: 10px 20px;
+  min-width: 15%; /* Ensures buttons have a minimum width */
+  border: none;
+  background-color: #FFC300; /* Muted color */
+  animation: pulse 2s infinite;
+}
+
+.exercise-button:hover {
+  background-color: #d8a600; /* Slightly darker on hover */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
 .visited {
-    background-color: #035f03; /* Bright green */
-  }
+  background-color: #035f03; /* Bright green */
+}
 
-  .visited:hover {
-    background-color: #024202; /* Bright green */
-  }
-  
+.visited:hover {
+  background-color: #024202; /* Bright green */
+}

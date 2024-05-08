@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-//import RandomImage from './RandomImage';
+import logo from './logo.png';
 
 function ExercisePage() {
   let { chapter, id: number } = useParams(); // Gets the id from the URL
@@ -26,7 +26,7 @@ function ExercisePage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (guess === answer) {
-      // alert("Teisingai!");
+      alert("Teisingai!");
       axios.put("http://localhost:8080/progress", {
         userId: localStorage.getItem("user_id"),
         chapter: chapter,
@@ -50,10 +50,12 @@ function ExercisePage() {
     <div>
       <h1>Užduotis numeris {number}</h1>
       <div>
-        <div className="content">
-          {/*<RandomImage/>*/}
-          {question}
-        </div>
+      <div className="content-exercise">
+        <img src={logo} alt="Welcome Logo" className="pulsating-image"/>
+        <div className="dialog-bubble">
+        {question}
+      </div>
+</div>
         <div>
           <form onSubmit={handleSubmit} className="signup-form">
             <label>

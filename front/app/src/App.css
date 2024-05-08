@@ -116,3 +116,30 @@ h2 {
   /* Adds some space between the image and the text */
   width: 250px;
 }
+.content-exercise {
+  display: flex;
+  align-items: center; /* Aligns the items vertically in the center */
+  justify-content: start; /* Aligns content from the start of the container */
+  gap: 20px; /* Optional: adds some space between the image and the dialogue bubble */
+}
+
+.dialog-bubble {
+  max-width: 600px; /* Maximum width for the bubble */
+  padding: 20px;
+  background-color: #f0f0f0; /* Light grey background, change as needed */
+  border-radius: 20px;
+  position: relative; /* Needed for pseudo-elements used for the tail */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+.dialog-bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px; /* Adjust as needed */
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: #f0f0f0; /* Match the bubble background color */
+  transform: translateY(-50%);
+}
