@@ -46,9 +46,9 @@ function Island3({setPoints}) {
   }, [setPoints]);
 
   return (
-    <div>
-      <h1>3 Skyrius</h1>
-      <div className="button-container">
+    <div className="button-container">
+      <h1>3 SALA</h1>
+      <div >
         {questionMap.map((q) => (
           <Link key={q.number} to={`/exercise/3/${q.number}`}>
             <button

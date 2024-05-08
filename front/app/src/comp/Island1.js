@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
 import Modal from './Modal';
+import island1 from './island1.png'
+//import islandback from "./island_back.jpg";
 
 function Island1({ setPoints }) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));
@@ -62,14 +64,16 @@ function Island1({ setPoints }) {
   }, [setPoints]);
 
   return (
-    <div className="body-container">
+    <div>
       <Modal isOpen={modalOpen} onClose={handleClose}>
         <h2>1 saloje rasi:</h2>
         <p>Skaičių skaitymą;</p>
       </Modal>
-      
-      <h1>1 Skyrius</h1>
-      <div className="button-container">
+      <img src={island1} alt="1 island" className="island-image"/>
+        <div className="button-container">
+       
+      <h1>1 SALA</h1>
+      <div >
         {questionMap.map((q) => (
           <Link key={q.number} to={`/exercise/1/${q.number}`}>
             <button
@@ -80,6 +84,10 @@ function Island1({ setPoints }) {
             </button>
           </Link>
         ))}
+        <div>
+          <h3>Šioje saloje rasi uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba. </h3>
+          </div>
+        </div>
       </div>
     </div>
   );

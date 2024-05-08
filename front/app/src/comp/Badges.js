@@ -30,6 +30,9 @@ function BadgesPage() {
       });
   }, []);
 
+  // Check if all badges are collected
+  const allCollected = badges.length === 5 && badges.every(badge => badge.received);
+
   return (
     <div>
       <h1>Surinkti ženkleliai:</h1>
@@ -42,15 +45,16 @@ function BadgesPage() {
               alt={b.received ? `Collected Badge ${index + 1}` : `Uncollected Badge ${index + 1}`}
               className="badge-icon"
               style={{
-                width: b.received ? '70%' : '50%', // Adjusted for size in the same container
+                width: b.received ? '70%' : '50%', 
                 height: 'auto',
                 display: 'block',
-                margin: '0 auto' // Centers the image in the div
+                margin: '0 auto' 
               }}
             />
           </div>
         ))}
       </div>
+      {allCollected && <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '30px', color: 'green' }}>Sveikinu! Pasitikrinai viso 4 klasės kurso žinias ir surinkai visus ženklelius!</p>}
     </div>
   );
 }
