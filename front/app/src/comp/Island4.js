@@ -65,10 +65,10 @@ function Island4({setPoints}) {
         <div>
   <h3>Šioje saloje rasi:</h3>
   <div className="text-container-row">
-    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
-    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
-    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
-    <div className="text-container">uždavinių su skaičių skaitymu, skaičių supratimu, sudėtimi, astimtimi, daugyba ir dalyba.</div>
+    <div className="text-container">Įvairių matavymo vienetų skaičiavimo uždavinių.</div>
+    <div className="text-container">Judėjimo uždavinių</div>
+    <div className="text-container">Darbo uždavinių.</div>
+    <div className="text-container">Matavimo vienetų keitimas.</div>
   </div>
 </div>
       </div>
