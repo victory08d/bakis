@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./IslandPage.css";
 import axios from "axios";
 import island1 from './island1.png'
-//import islandback from "./island_back.jpg";
 
 function Island1({ setPoints }) {
   const [questionMap, setQuestionMap] = useState(generateQuestionJson(30));

@@ -1,5 +1,4 @@
-// In src/components/Header.js
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
@@ -20,7 +19,6 @@ function Header({ points, setPoints }) {
     });
   }, []);
 
-  // Determine if the current page is ExercisePage
   const isExercisePage = location.pathname.includes("/exercise");
 
   return (
@@ -28,7 +26,6 @@ function Header({ points, setPoints }) {
       <button id="back-button" onClick={() => handleNavigate(-1)}>
         Atgal
       </button>
-      {/* Conditionally render other elements based on whether it's the exercise page or not */}
       {!isExercisePage && (
         <div className="button-group">
           {[1, 2, 3, 4, 5].map((num) => (

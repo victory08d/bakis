@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./comp/Home";
 import SignUp from "./comp/SignUp";
-//import SignIn from './comp/SignIn';
 import Welcome from "./comp/Welcome";
 import "./App.css";
 import "./comp/Header.css";
@@ -18,7 +17,7 @@ import HeaderWrapper from "./comp/HeaderWrapper";
 import AboutPage from "./comp/About";
 
 function App() {
-  const [hasBadge, setHasBadge] = useState(false);
+  const [hasBadge, setHasBadge] = useState("");
   const [points, setPoints] = useState("");
 
   return (
@@ -28,13 +27,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
-          {/*<Route path="/signin" element={<SignIn />} />*/}
-          <Route path="/welcome" element={<Welcome hasBadge={hasBadge} />} />
+          <Route path="/welcome" element={<Welcome hasBadge={hasBadge} setHasBadge={setHasBadge} />} />
           <Route path="/badges" element={<Badges />} />
-          <Route
-            path="/island1"
-            element={<IslandPage1 setPoints={setPoints} />}
-          />
+          <Route path="/island1"
+            element={<IslandPage1 setPoints={setPoints} />} />
           <Route path="/exercise/:chapter/:id" element={<ExercisePage />} />
           <Route path="/island2"
             element={<IslandPage2 setPoints={setPoints} />} />

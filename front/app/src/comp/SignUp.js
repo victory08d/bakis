@@ -54,7 +54,7 @@ function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-      <button type="submit">Registruoti</button>
+      <button type="submit">Prisijungti</button>
     </form>
   );
 }

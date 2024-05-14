@@ -5,9 +5,7 @@
 
 body {
   font-family: 'Comic Neue', Verdana, Geneva, Tahoma, sans-serif;
-  /* A playful font family */
   background: linear-gradient(45deg, #85C1E9, #F7DC6F);
-  /* Bright and engaging background gradient */
   color: #333;
   text-align: center;
   margin: 0;
