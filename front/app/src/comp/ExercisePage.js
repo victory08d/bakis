@@ -47,8 +47,8 @@ function ExercisePage() {
   const Modal = ({ message }) => (
     <div style={{
       position: 'fixed', top: '20%', left: '50%', transform: 'translate(-50%, -50%)',
-      backgroundColor: 'lightblue', padding: '20px', borderRadius: '10px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', textAlign: 'center', color: 'darkblue',
+      backgroundColor: 'lightgreen', padding: '20px', borderRadius: '10px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', textAlign: 'center', color: 'darkgreen',
       fontSize: '20px', zIndex: 1000
     }}>
       {message}
