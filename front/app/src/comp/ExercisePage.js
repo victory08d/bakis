@@ -26,6 +26,11 @@ function ExercisePage() {
     if (guess === answer) {
       setModalMessage("Atsakei teisingai! Gauni +1 tašką!");
       setShowModal(true);
+      axios.put("http://localhost:8080/progress", {
+        userId: localStorage.getItem("user_id"),
+        chapter: chapter,
+        number: number,
+      });
       setTimeout(() => {
         setShowModal(false);
         navigate("/island" + chapter);
